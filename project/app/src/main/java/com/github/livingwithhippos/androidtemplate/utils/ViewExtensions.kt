@@ -1,7 +1,10 @@
 package com.github.livingwithhippos.androidtemplate.utils
 
+import android.graphics.drawable.Animatable
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 
 
 /** Milliseconds used for UI animations */
@@ -32,4 +35,14 @@ fun Button.simulateAnimation(delay: Long = ANIMATION_SLOW_MILLIS) {
         invalidate()
         isPressed = false
     }, delay)
+}
+
+@BindingAdapter("startAnimation")
+fun ImageView.startAnimation(start: Boolean) {
+    if (drawable is Animatable) {
+        if (start)
+            (drawable as Animatable).start()
+        else
+            (drawable as Animatable).stop()
+    }
 }
