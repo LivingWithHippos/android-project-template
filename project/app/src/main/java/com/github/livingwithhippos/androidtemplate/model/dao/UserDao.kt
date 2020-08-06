@@ -6,6 +6,9 @@ import com.github.livingwithhippos.androidtemplate.model.entities.User
 @Dao
 interface UserDao {
 
+    @Query("SELECT * FROM user WHERE name = :name")
+    suspend fun getUser(name: String): User
+
     @Query("SELECT * from user")
     suspend fun getAll(): List<User>
 
@@ -13,7 +16,7 @@ interface UserDao {
     suspend fun insert(user: User)
 
     @Update
-    suspend fun updateUser(user: User)
+    suspend fun update(user: User)
 
     @Query("DELETE FROM user")
     suspend fun deleteAll()
