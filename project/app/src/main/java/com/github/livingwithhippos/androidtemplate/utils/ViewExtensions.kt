@@ -1,10 +1,14 @@
 package com.github.livingwithhippos.androidtemplate.utils
 
 import android.graphics.drawable.Animatable
+import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
 
 
 /** Milliseconds used for UI animations */
@@ -44,5 +48,13 @@ fun ImageView.startAnimation(start: Boolean) {
             (drawable as Animatable).start()
         else
             (drawable as Animatable).stop()
+    }
+}
+
+@BindingAdapter("hrefSupport")
+fun TextView.hrefSupport(support: Boolean) {
+    if (support) {
+        text = Html.fromHtml(this.text as String?, Html.FROM_HTML_MODE_COMPACT)
+        movementMethod = LinkMovementMethod.getInstance()
     }
 }

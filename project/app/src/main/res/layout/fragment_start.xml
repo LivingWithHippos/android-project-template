@@ -9,11 +9,29 @@
         android:layout_height="match_parent"
         tools:context=".start.view.StartFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        <TextView
+            android:id="@+id/tvPowered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/powered_by"
+            app:hrefSupport="@{true}"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/ivLogoPic"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/ivLogoPic"
+            android:layout_height="15dp"
+            android:layout_width="wrap_content"
+            android:scaleType="fitCenter"
+            app:imageURL="@{`https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png`}"
+            app:layout_constraintBottom_toBottomOf="@id/tvPowered"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvPowered"
+            android:contentDescription="@string/job_search" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
