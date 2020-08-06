@@ -1,8 +1,8 @@
 package com.github.livingwithhippos.androidtemplate.start.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.github.livingwithhippos.androidtemplate.databinding.ActivityMainBinding
 import com.github.livingwithhippos.androidtemplate.start.model.MainActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
