@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Android Template</string>
     <string name="invalid_url">Invalid URL</string>
-    <string name="powered_by"><![CDATA[<a href=\'https://www.glassdoor.com/index.htm\'>powered by</a>]]></string>
+    <string name="powered_by"><![CDATA[<a href=\'https://jobs.github.com/api\'>powered by</a>]]></string>
     <string name="job_search">Job Search</string>
+    <string name="load_jobs">Load Jobs</string>
 </resources>
