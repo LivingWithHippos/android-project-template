@@ -17,33 +17,50 @@
         android:layout_height="match_parent"
         tools:context=".start.view.StartFragment">
 
-        <TextView
-            android:id="@+id/tvPowered"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfDescription"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
-            android:layout_marginTop="5dp"
-            android:text="@string/powered_by"
-            app:hrefSupport="@{true}"
+            android:hint="@string/keywords"
+            android:importantForAutofill="no"
+            app:endIconMode="clear_text"
             app:layout_constraintBottom_toTopOf="@+id/bLoad"
-            app:layout_constraintEnd_toStartOf="@+id/ivLogoPic"
+            app:layout_constraintEnd_toStartOf="@+id/tfLocation"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/ivLogoPic"
-            android:layout_width="wrap_content"
-            android:layout_height="15dp"
-            android:contentDescription="@string/job_search"
-            android:scaleType="fitCenter"
-            app:imageURL="@{`https://github.githubassets.com/images/modules/logos_page/Octocat.png`}"
-            app:layout_constraintBottom_toBottomOf="@id/tvPowered"
-            app:layout_constraintEnd_toEndOf="parent"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tfLocation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:hint="@string/location"
+            android:importantForAutofill="no"
+            app:endIconMode="clear_text"
+            app:layout_constraintStart_toEndOf="@+id/tfDescription"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tvPowered" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/bLoad"
@@ -54,24 +71,45 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPowered" />
+            app:layout_constraintTop_toBottomOf="@+id/tfDescription" />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:adapter="@{adapter}"
-            android:orientation="vertical"
+            android:layout_height="600dp"
             android:clipChildren="false"
-            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            app:adapter="@{adapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvPowered"
             app:layout_constraintTop_toBottomOf="@+id/bLoad"
             tools:listitem="@layout/item_job" />
+
+
+        <TextView
+            android:id="@+id/tvPowered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/powered_by"
+            app:hrefSupport="@{true}"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintEnd_toStartOf="@+id/ivLogoPic"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+        <ImageView
+            android:id="@+id/ivLogoPic"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:contentDescription="@string/job_search"
+            android:scaleType="fitCenter"
+            app:imageURL="@{`https://github.githubassets.com/images/modules/logos_page/Octocat.png`}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvPowered"
+            app:layout_constraintBottom_toBottomOf="@id/tvPowered"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </layout>

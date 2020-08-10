@@ -5,4 +5,6 @@
     <string name="job_search">Job Search</string>
     <string name="load_jobs">Load Jobs</string>
     <string name="company_logo">Company Logo</string>
+    <string name="keywords">Keywords</string>
+    <string name="location">Location</string>
 </resources>

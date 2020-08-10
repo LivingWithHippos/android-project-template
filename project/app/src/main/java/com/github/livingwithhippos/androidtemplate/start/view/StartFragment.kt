@@ -37,7 +37,9 @@ class StartFragment : Fragment() {
         })
 
         binding.bLoad.setOnClickListener {
-            viewModel.fetchPositionsInfo("android", "berlin")
+            val description = if (binding.tiDescription.text.toString().isNotEmpty()) binding.tiDescription.text.toString() else "android"
+            val location = if (binding.tiLocation.text.toString().isNotEmpty()) binding.tiLocation.text.toString() else "berlin"
+            viewModel.fetchPositionsInfo(description, location)
         }
         return binding.root
     }
