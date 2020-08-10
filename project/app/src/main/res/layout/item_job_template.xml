@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="position"
+            type="com.github.livingwithhippos.androidtemplate.model.network.api.Position" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivCompanyLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:srcCompat="@tools:sample/avatars"
+            imageURL="@{position.companyLogo}"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="@{position.title, default=`Job Title`}"
+            app:layout_constraintStart_toEndOf="@id/ivCompanyLogo"
+            app:layout_constraintTop_toTopOf="@id/ivCompanyLogo"/>
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:text="@{position.type, default=`Job Type`}"
+            app:layout_constraintStart_toEndOf="@id/ivCompanyLogo"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+
+        <TextView
+            android:id="@+id/tvCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{position.company, default=`Company Name`}"
+            app:layout_constraintStart_toEndOf="@id/ivCompanyLogo"
+            app:layout_constraintTop_toBottomOf="@id/tvType"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+    <!--
+    @JsonClass(generateAdapter = true)
+    data class Position(
+        @Json(name = "url")
+        val url: String,
+        @Json(name = "created_at")
+        val createdAt: String,
+        @Json(name = "company")
+        val company: String,
+        @Json(name = "company_url")
+        val companyUrl: String?,
+        @Json(name = "location")
+        val location: String,
+        @Json(name = "description")
+        val description: String,
+        @Json(name = "how_to_apply")
+        val howToApply: String,
+    )
+    -->
