@@ -53,7 +53,11 @@ fun ImageView.startAnimation(start: Boolean) {
 @BindingAdapter("hrefSupport")
 fun TextView.hrefSupport(support: Boolean) {
     if (support) {
-        text = Html.fromHtml(this.text as String?, Html.FROM_HTML_MODE_COMPACT)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            text = Html.fromHtml(this.text as String?, Html.FROM_HTML_MODE_COMPACT)
+        } else {
+            text = Html.fromHtml(this.text as String?)
+        }
         movementMethod = LinkMovementMethod.getInstance()
     }
 }
