@@ -29,8 +29,11 @@ class StartFragment : Fragment() {
     ): View? {
         val binding = FragmentStartBinding.inflate(inflater, container, false)
 
+        val positionAdapter = PositionAdapter()
+        binding.adapter = positionAdapter
+
         viewModel.positionsLiveData.observe(viewLifecycleOwner, Observer { positions ->
-            positions?.forEach { Log.d("StartFragment", "Position: $it") }
+            positionAdapter.submitList(positions)
         })
 
         binding.bLoad.setOnClickListener {
