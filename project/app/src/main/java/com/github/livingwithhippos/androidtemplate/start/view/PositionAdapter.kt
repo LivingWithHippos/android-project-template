@@ -20,7 +20,7 @@ class PositionAdapter : ListAdapter<Position, PositionAdapter.PositionViewHolder
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PositionViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = ItemJobBinding.inflate(layoutInflater)
+        val binding = ItemJobBinding.inflate(layoutInflater, parent, false)
 
         return PositionViewHolder(binding)
     }
