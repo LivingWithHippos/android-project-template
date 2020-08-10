@@ -66,6 +66,5 @@ fun TextView.hrefSupport(support: Boolean) {
 
 @BindingAdapter("adapter")
 fun RecyclerView.bindAdapter(adapter: RecyclerView.Adapter<*>) {
-    setHasFixedSize(true)
     this.adapter = adapter
 }
