@@ -1,6 +1,7 @@
 package com.github.livingwithhippos.androidtemplate.utils
 
 import android.graphics.drawable.Animatable
+import android.os.Build
 import android.text.Html
 import android.text.method.LinkMovementMethod
 import android.widget.Button
@@ -8,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 
 
 /** Milliseconds used for UI animations */
@@ -60,4 +62,10 @@ fun TextView.hrefSupport(support: Boolean) {
         }
         movementMethod = LinkMovementMethod.getInstance()
     }
+}
+
+@BindingAdapter("adapter")
+fun RecyclerView.bindAdapter(adapter: RecyclerView.Adapter<*>) {
+    setHasFixedSize(true)
+    this.adapter = adapter
 }
