@@ -10,46 +10,64 @@
             type="com.github.livingwithhippos.androidtemplate.model.network.api.Position" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvPositionDetails"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:checkable="false"
+        android:clickable="false"
+        android:focusable="true"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/ivCompanyLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:srcCompat="@tools:sample/avatars"
-            imageURL="@{position.companyLogo}"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:text="@{position.title, default=`Job Title`}"
-            app:layout_constraintStart_toEndOf="@id/ivCompanyLogo"
-            app:layout_constraintTop_toTopOf="@id/ivCompanyLogo"/>
+            <ImageView
+                android:id="@+id/ivCompanyLogo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:srcCompat="@tools:sample/avatars"
+                imageURL="@{position.companyLogo}"/>
 
-        <TextView
-            android:id="@+id/tvType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="italic"
-            android:text="@{position.type, default=`Job Type`}"
-            app:layout_constraintStart_toEndOf="@id/ivCompanyLogo"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@{position.title, default=`Job Title`}"
+                app:layout_constraintStart_toEndOf="@id/ivCompanyLogo"
+                app:layout_constraintTop_toTopOf="@id/ivCompanyLogo"/>
 
-        <TextView
-            android:id="@+id/tvCompany"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{position.company, default=`Company Name`}"
-            app:layout_constraintStart_toEndOf="@id/ivCompanyLogo"
-            app:layout_constraintTop_toBottomOf="@id/tvType"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:text="@{position.type, default=`Job Type`}"
+                app:layout_constraintStart_toEndOf="@id/ivCompanyLogo"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+
+            <TextView
+                android:id="@+id/tvCompany"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{position.company, default=`Company Name`}"
+                app:layout_constraintStart_toEndOf="@id/ivCompanyLogo"
+                app:layout_constraintTop_toBottomOf="@id/tvType"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
 </layout>
 
 
