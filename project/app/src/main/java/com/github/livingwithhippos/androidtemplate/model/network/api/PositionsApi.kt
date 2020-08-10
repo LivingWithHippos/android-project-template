@@ -52,5 +52,5 @@ data class Position(
     @Json(name = "how_to_apply")
     val howToApply: String,
     @Json(name = "company_logo")
-    val companyLogo: String
+    val companyLogo: String?
 )
