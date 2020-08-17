@@ -89,24 +89,3 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
-
-
-    <!--
-    @JsonClass(generateAdapter = true)
-    data class Position(
-        @Json(name = "url")
-        val url: String,
-        @Json(name = "created_at")
-        val createdAt: String,
-        @Json(name = "company")
-        val company: String,
-        @Json(name = "company_url")
-        val companyUrl: String?,
-        @Json(name = "location")
-        val location: String,
-        @Json(name = "description")
-        val description: String,
-        @Json(name = "how_to_apply")
-        val howToApply: String,
-    )
-    -->

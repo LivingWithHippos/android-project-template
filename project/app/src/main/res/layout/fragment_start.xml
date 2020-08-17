@@ -49,9 +49,9 @@
             android:hint="@string/location"
             android:importantForAutofill="no"
             app:endIconMode="clear_text"
-            app:layout_constraintStart_toEndOf="@+id/tfDescription"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tfDescription"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -67,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/load_jobs"
+            android:layout_margin="10dp"
             app:layout_constraintBottom_toTopOf="@+id/recyclerView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -77,7 +78,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
+            android:layout_height="0dp"
             android:clipChildren="false"
             android:orientation="vertical"
             app:adapter="@{adapter}"
@@ -93,9 +94,10 @@
             android:layout_height="wrap_content"
             android:text="@string/powered_by"
             app:hrefSupport="@{true}"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/ivLogoPic"
             app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
@@ -106,10 +108,10 @@
             android:contentDescription="@string/job_search"
             android:scaleType="fitCenter"
             app:imageURL="@{`https://github.githubassets.com/images/modules/logos_page/Octocat.png`}"
+            app:layout_constraintBottom_toBottomOf="@id/tvPowered"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tvPowered"
-            app:layout_constraintBottom_toBottomOf="@id/tvPowered"/>
+            app:layout_constraintStart_toEndOf="@+id/tvPowered" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </layout>
